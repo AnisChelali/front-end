@@ -1,0 +1,45 @@
+.svg {
+  display: none;
+  margin: 0 auto;
+  width: 80px;
+}
+
+.image {
+  margin-top: 50px;
+}
+.image img {
+  display: block;
+  margin: auto;
+  width: 35%;
+}
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 30px;
+}
+i {
+  cursor: pointer;
+  font-size: 24px;
+  color: white;
+  border-radius: 50%;
+  padding: 8px;
+}
+.fa-check {
+  background-color: green;
+}
+.fa-remove {
+  background-color: red;
+}
+@media (max-width: 767px) {
+  .svg {
+    display: block;
+  }
+  .image {
+    margin-top: 50px;
+  }
+  .image img {
+    margin: 0;
+    width: 100%;
+  }
+}

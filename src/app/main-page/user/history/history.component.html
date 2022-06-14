@@ -1,0 +1,15 @@
+<div class="back-history">
+  <a [routerLink]="['/user']"><i class="fa fa-arrow-left"></i></a>
+  <p>History</p>
+</div>
+<div class="p">
+  <p class="p-one" (click)="onCleanImage()">Clean</p>
+  <p class="p-two" (click)="onUnCleanImage()">Unclean</p>
+</div>
+<div class="imageGrid">
+  <img
+    *ngFor="let item of filteredImages"
+    [src]="item.url"
+    (click)="openItem(item.url)"
+  />
+</div>

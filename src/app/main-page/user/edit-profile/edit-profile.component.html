@@ -1,0 +1,36 @@
+<div class="profile-edit">
+  <div class="back-profile">
+    <a [routerLink]="['/user']"> <i class="fa fa-arrow-left"></i> </a>
+    <p>Edit your profile</p>
+  </div>
+
+  <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+    <input
+      type="text"
+      name="username"
+      ngModel
+      required
+      placeholder="Username"
+    />
+    <input type="email" name="email" ngModel required placeholder="Email" />
+    <input
+      type="password"
+      name="currentPassword"
+      ngModel
+      required
+      minlength="8"
+      placeholder="Current password"
+    />
+    <input
+      type="password"
+      name="newPassword"
+      ngModel
+      required
+      minlength="8"
+      placeholder="New password"
+    />
+    <button type="submit" [disabled]="!authForm.valid">SAVE</button>
+  </form>
+</div>
+
+<h2 *ngIf="error">{{ error }}</h2>

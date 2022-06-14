@@ -1,0 +1,259 @@
+.split-fields {
+  display: grid;
+  grid-template-columns: minmax(150px, 230px) auto;
+  column-gap: 10px;
+}
+@media (max-width: 991px) {
+  .split-fields {
+    grid-template-columns: minmax(150px, 200px) auto;
+  }
+}
+@media (max-width: 767px) {
+  .split-fields {
+    display: block;
+  }
+}
+/*Start General Styling*/
+.icon {
+  text-align: center;
+}
+
+img {
+  width: 100px;
+}
+.svg1 {
+  display: none;
+}
+hr {
+  margin-top: 15px;
+  margin-bottom: 0%;
+  background-color: #3b3b3b;
+}
+ul {
+  margin-left: 10px;
+}
+li {
+  margin-top: 20px;
+}
+i {
+  color: #a6ae9d;
+  font-size: 20px;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+span {
+  color: #3b3b3b;
+  font-weight: 800;
+  font-size: 15px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+/*End General Styling*/
+/*Start Menu Part*/
+.list1 li .div {
+  width: 20px;
+  display: inline-block;
+  margin-right: 10px;
+}
+.list1 li > a:nth-child(2) {
+  margin-left: 70px;
+}
+a:hover span,
+a:hover i {
+  color: #64c601;
+}
+/*End Menu Part*/
+/*Start Filter Part*/
+.btn-switch {
+  margin-right: 10%;
+  margin-top: 4px;
+}
+/*Start Toggle Switch*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 11px;
+}
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #a6ae9d;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 7px;
+  width: 7px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #64c601;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #64c601;
+}
+
+input:checked + .slider:before {
+  transform: translateX(8px);
+}
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+/*End Toggle Switch*/
+.list2 li:first-child {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list2 li:nth-child(2) {
+  display: flex;
+  justify-content: space-between;
+}
+.list2 li:nth-child(2) i {
+  padding-right: 10%;
+}
+.image img {
+  margin-top: 10px;
+  width: 100%;
+}
+.menu,
+.menu-field {
+  display: none;
+}
+@media (max-width: 991px) {
+  i {
+    font-size: 17px;
+    padding: 5px;
+  }
+  span {
+    font-size: 12px;
+  }
+  .image img {
+    width: 80%;
+  }
+}
+@media (max-width: 767px) {
+  .list1 span,
+  .list2,
+  .svg2,
+  hr,
+  .list1 li:first-child a:last-child {
+    display: none;
+  }
+  .svg1 {
+    display: block;
+    margin: 0 auto;
+    width: 80px;
+  }
+  /* Start Managing Sizes*/
+  .menu-field {
+    margin-bottom: 15px;
+  }
+  .list2 li {
+    padding-left: 10%;
+  }
+  .list2 li span {
+    font-size: 15px;
+  }
+  .btn-switch {
+    padding-right: 20%;
+  }
+  .list2 li:nth-child(2) i {
+    padding-right: 20%;
+  }
+  .switch {
+    width: 30px;
+    height: 15px;
+  }
+  .slider:before {
+    height: 11px;
+    width: 11px;
+  }
+  input:checked + .slider:before {
+    transform: translateX(13px);
+  }
+  .icon svg {
+    width: 70px;
+  }
+  .list1 li .div i {
+    font-size: 50px;
+  }
+  /* End Managing Sizes*/
+  body {
+    position: relative;
+  }
+  .list1 {
+    position: fixed;
+    width: 96%;
+    margin: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    background-color: white;
+  }
+  .list1 li {
+    padding: 0%;
+  }
+  .list1 li .div {
+    margin: 0;
+    width: 50px;
+    height: 50px;
+  }
+  .links .menu {
+    position: absolute;
+    display: block;
+    width: 35px;
+    left: 15px;
+    top: 42px;
+  }
+  .links .menu div {
+    width: 35px;
+    height: 5px;
+    background-color: #a6ae9d;
+    margin: 6px 0;
+  }
+  .list2 li:last-child {
+    display: none;
+  }
+  .menu-field {
+    display: flex;
+  }
+  .menu-field p {
+    margin: 0;
+    padding-left: 30px;
+    font-size: 20px;
+    font-weight: 800;
+  }
+  .visible {
+    display: block;
+  }
+  .invisible {
+    display: none;
+  }
+}
+/*End Filter Part*/

@@ -1,0 +1,20 @@
+<div class="up">
+  <div class="imageSingle">
+    <img [src]="images[i].url" alt="" />
+    <div class="icons">
+      <i class="fa fa-rotate-left" (click)="undoImage()"></i>
+      <i class="fa fa-check" (click)="acceptImage()"></i>
+      <i class="fa fa-remove" (click)="refuseImage()"></i>
+    </div>
+  </div>
+  <div class="pagination">
+    <div class="previous" *ngIf="page > 1" (click)="previousPage()">
+      <i class="fa fa-arrow-left"></i>
+      <span>prev</span>
+    </div>
+    <div class="next" *ngIf="page !== nbrPages" (click)="nextPage()">
+      <span>next</span>
+      <i class="fa fa-arrow-right"></i>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="auth-field" *ngIf="!error">
+  <div class="icon">
+    <img src="../../assets/DClogo.svg" alt="" />
+  </div>
+  <p>LOG IN</p>
+  <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+    <input
+      type="text"
+      name="username"
+      ngModel
+      required
+      placeholder="Username"
+    />
+    <input
+      type="password"
+      name="password"
+      ngModel
+      required
+      placeholder="Password"
+    />
+    <a (click)="onForgotPass()">FORGOT PASSWORD?</a>
+    <div class="buttons">
+      <button class="btn btn1" type="button" (click)="onCancel()">
+        CANCEL
+      </button>
+      <button class="btn btn2" type="submit" [disabled]="authForm.invalid">
+        LOG IN
+      </button>
+    </div>
+    <p>
+      No account?<a [routerLink]="['/authenticate', 'signup']"
+        >Create account</a
+      >
+    </p>
+  </form>
+</div>
+
+<h2 *ngIf="error">{{ error }}</h2>
+<button *ngIf="error" (click)="onHandlingError()">okay</button>

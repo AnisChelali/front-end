@@ -1,0 +1,115 @@
+<div class="split-fields">
+  <div class="side-field">
+    <div class="links">
+      <div class="menu-field" *ngIf="openMenu">
+        <span (click)="openMenu = !openMenu">
+          <i class="fa fa-arrow-left"></i>
+        </span>
+        <p>Menu</p>
+      </div>
+      <div
+        class="icon"
+        *ngIf="!openMenu"
+        [ngStyle]="{ display: openProfile ? 'none' : 'block' }"
+      >
+        <img src="../../assets/DClogo.svg" class="svg1" alt="" />
+      </div>
+      <div class="icon">
+        <img src="../../assets/DClogo.svg" class="svg2" alt="" />
+      </div>
+      <hr />
+      <ul class="list1">
+        <li>
+          <a routerLink="/user" (click)="isActiveColor(1)">
+            <div class="div" (click)="openMenu = false; openProfile = true">
+              <i
+                class="fa fa-user"
+                [ngStyle]="{
+                  color: activeColor === 'activeUser' ? '#64c601' : '#A6AE9D'
+                }"
+              ></i>
+            </div>
+            <span
+              [ngStyle]="{
+                color: activeColor === 'activeUser' ? '#64c601' : '#3b3b3b'
+              }"
+            >
+              {{ username }}
+            </span>
+          </a>
+          <a [routerLink]="['/authenticate']" (click)="onLogout()">
+            <i class="fa fa-sign-out"></i>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/home" (click)="isActiveColor(2)">
+            <div class="div" (click)="openMenu = false; openProfile = false">
+              <i
+                class="fa fa-home"
+                [ngStyle]="{
+                  color: activeColor === 'activeHome' ? '#64c601' : '#A6AE9D'
+                }"
+              ></i>
+            </div>
+            <span
+              [ngStyle]="{
+                color: activeColor === 'activeHome' ? '#64c601' : '#3b3b3b'
+              }"
+              >Home</span
+            >
+          </a>
+        </li>
+        <li>
+          <a routerLink="/dashboard" (click)="isActiveColor(3)">
+            <div class="div" (click)="openMenu = false; openProfile = false">
+              <i
+                class="fa fa-bar-chart-o"
+                [ngStyle]="{
+                  color: activeColor === 'activeDash' ? '#64c601' : '#A6AE9D'
+                }"
+              ></i>
+            </div>
+            <span
+              [ngStyle]="{
+                color: activeColor === 'activeDash' ? '#64c601' : '#3b3b3b'
+              }"
+              >Dashboard</span
+            >
+          </a>
+        </li>
+      </ul>
+      <hr />
+
+      <div
+        class="menu"
+        (click)="openMenu = !openMenu"
+        *ngIf="!openMenu"
+        [ngStyle]="{ display: openProfile ? 'none' : 'block' }"
+      >
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="list2" [ngClass]="{ visible: openMenu }">
+        <li>
+          <span>Change view</span>
+          <a class="btn-switch">
+            <label class="switch">
+              <input type="checkbox" (click)="changeMode()" />
+              <span class="slider round"></span>
+            </label>
+          </a>
+        </li>
+        <li>
+          <div class="image">
+            <span>KeyBoards Shortcuts</span>
+            <img src="../../assets/Capture1.PNG" alt="" />
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="content-field" *ngIf="!openMenu">
+    <router-outlet></router-outlet>
+  </div>
+</div>
